@@ -1,0 +1,3556 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Today is for MaiPhanhh 💕</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Pacifico&family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #ffdce9;
+  --pink-light: #fff8fb;
+  --pink-dark: #ffabc9;
+  --pink-text: #6b2545;
+  --pink-soft: #916278;
+  --yellow: #ffd166;
+
+  --gift: #ff87ad;
+  --gift-dark: #d95182;
+
+  --paper: #fffdf8;
+  --note: #fff2a8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  color: var(--pink-text);
+  font-family: 'Quicksand', sans-serif;
+
+  background-color: #ffdce9;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.72) 50%,
+      transparent 50%
+    ),
+    linear-gradient(
+      rgba(255,255,255,.72) 50%,
+      transparent 50%
+    );
+
+  background-size: 46px 46px;
+  background-attachment: fixed;
+}
+
+
+/* =========================================================
+   LOCK SCREEN
+========================================================= */
+
+#lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+  padding: 24px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0f5,
+      #ffc9de,
+      #ff91bd
+    );
+
+  background-size: 300% 300%;
+
+  animation:
+    lockBg 10s ease infinite;
+
+  transition:
+    opacity .75s cubic-bezier(.22,1,.36,1),
+    visibility .75s;
+}
+
+#lock-screen.unlocked {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes lockBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.lock-title {
+  font-family: 'Pacifico', cursive;
+
+  font-size:
+    clamp(1.5rem, 5vw, 2.2rem);
+
+  color: var(--pink-text);
+}
+
+.lock-sub {
+  max-width: 330px;
+
+  font-size: .92rem;
+
+  color: var(--pink-text);
+
+  opacity: .8;
+}
+.login-photos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: min(700px, 90vw);
+}
+
+.login-photos {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(900px, 100vw);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 25px;
+
+  pointer-events: none;
+}
+
+.login-photos img {
+  width: min(20vw, 180px);
+  height: min(28vw, 230px);
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 25px
+    rgba(107,37,69,.22);
+}
+
+.login-photos img:first-child {
+  transform: rotate(-4deg);
+}
+
+.login-photos img:last-child {
+  transform: rotate(4deg);
+}
+
+.date-inputs {
+  display: flex;
+  gap: 9px;
+}
+
+.date-part {
+  width: 64px;
+
+  padding: 10px 0;
+
+  border: none;
+  outline: none;
+
+  border-radius: 10px;
+
+  background: white;
+
+  text-align: center;
+
+  font: 500 1rem 'Quicksand';
+
+  box-shadow:
+    0 5px 15px
+    rgba(107,37,69,.12);
+}
+
+.date-part.year {
+  width: 88px;
+}   
+
+
+/* =========================================================
+   NÚT MỞ KHÓA FIX
+========================================================= */
+
+#unlock-btn {
+  position: relative;
+
+  min-width: 155px;
+
+  padding: 12px 28px;
+
+  border: none;
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd166,
+      #ffca5c
+    );
+
+  color: #6b2545;
+
+  font-family:
+    'Quicksand',
+    sans-serif;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: .01em;
+
+  cursor: pointer;
+
+  outline: none;
+
+  box-shadow:
+    0 7px 18px
+    rgba(107,37,69,.16);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    filter .2s ease,
+    opacity .2s ease;
+}
+
+#unlock-btn::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 2px;
+
+  border-radius: inherit;
+
+  border:
+    1px solid
+    rgba(255,255,255,.55);
+
+  pointer-events: none;
+}
+
+#unlock-btn:hover {
+  transform:
+    translateY(-2px)
+    scale(1.045);
+
+  box-shadow:
+    0 10px 24px
+    rgba(107,37,69,.2);
+
+  filter: brightness(1.03);
+}
+
+#unlock-btn:active {
+  transform:
+    translateY(1px)
+    scale(.97);
+
+  box-shadow:
+    0 4px 10px
+    rgba(107,37,69,.15);
+}
+
+#unlock-btn:focus-visible {
+  box-shadow:
+    0 0 0 4px
+      rgba(255,255,255,.8),
+    0 8px 22px
+      rgba(107,37,69,.2);
+}
+
+#unlock-btn:disabled {
+  cursor: default;
+  opacity: .7;
+  transform: none;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-msg {
+  min-height: 1.2em;
+  color: #c0335a;
+  font-size: .9rem;
+}
+
+.shake {
+  animation: shake .4s;
+}
+
+@keyframes shake {
+  0%,100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-8px);
+  }
+
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hidden-content {
+  display: none !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  padding: 45px 20px 35px;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+
+  line-height: .96;
+  letter-spacing: -.035em;
+
+  animation:
+    heroIn
+    1s
+    cubic-bezier(.22,1,.36,1)
+    both;
+}
+
+.hero-title .small {
+  display: block;
+
+  font-size:
+    clamp(2rem, 6vw, 4rem);
+}
+
+.hero-title .big {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size:
+    clamp(3.5rem, 11vw, 7rem);
+
+  font-weight: 400;
+
+  color: #e16d99;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform:
+      translateY(25px)
+      scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   DECOR HERO
+========================================================= */
+
+.hero-decor {
+  position: absolute;
+
+  pointer-events: none;
+  user-select: none;
+
+  opacity: .72;
+
+  animation:
+    floatDecor
+    4s ease-in-out infinite;
+}
+
+.hero-d1 {
+  top: 25%;
+  left: 8%;
+  font-size: 27px;
+}
+
+.hero-d2 {
+  top: 22%;
+  right: 8%;
+  font-size: 23px;
+  animation-delay: -.9s;
+}
+
+.hero-d3 {
+  bottom: 20%;
+  left: 13%;
+  font-size: 25px;
+  animation-delay: -1.8s;
+}
+
+.hero-d4 {
+  bottom: 18%;
+  right: 12%;
+  font-size: 27px;
+  animation-delay: -2.6s;
+}
+
+@keyframes floatDecor {
+  0%,100% {
+    transform:
+      translateY(0)
+      rotate(-4deg);
+  }
+
+  50% {
+    transform:
+      translateY(-9px)
+      rotate(5deg);
+  }
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-player {
+  position: relative;
+  z-index: 5;
+
+  margin-top: 40px;
+
+  width:
+    min(430px,92vw);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.record-container {
+  width: 165px;
+  height: 165px;
+
+  cursor: pointer;
+
+  filter:
+    drop-shadow(
+      0 12px 22px
+      rgba(82,32,57,.23)
+    );
+}
+
+.record {
+  position: relative;
+
+  width: 165px;
+  height: 165px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      #302d32 0 2px,
+      #161419 3px 5px
+    );
+
+  border: 6px solid #18161b;
+}
+
+.record::before {
+  content: "";
+
+  position: absolute;
+  inset: 22px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+}
+
+.record::after {
+  content: "";
+
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  border-radius: 50%;
+
+  background: #151419;
+
+  border:
+    4px solid
+    #45404a;
+}
+
+.cover {
+  position: absolute;
+
+  width: 69px;
+  height: 69px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border:
+    3px solid white;
+
+  z-index: 3;
+}
+
+.record.playing {
+  animation:
+    spinRecord
+    4s linear infinite;
+}
+
+@keyframes spinRecord {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.song-info {
+  width: 100%;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.song-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.artist-name {
+  margin-top: 3px;
+
+  color: var(--pink-soft);
+
+  font-size: .8rem;
+}
+
+.progress-container {
+  width:
+    min(370px,85vw);
+
+  margin-top: 12px;
+}
+
+.progress {
+  width: 100%;
+  height: 5px;
+
+  appearance: none;
+
+  border-radius: 999px;
+
+  background:
+    rgba(107,37,69,.16);
+
+  cursor: pointer;
+}
+
+.progress::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #df6d99;
+}
+
+.progress::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #df6d99;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 5px;
+
+  color: var(--pink-soft);
+
+  font-size: .72rem;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 11px;
+}
+
+.music-btn {
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,.78);
+
+  color: var(--pink-text);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px
+    rgba(107,37,69,.1);
+}
+
+.volume {
+  width: 65px;
+}
+
+.volume input {
+  width: 100%;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline-section {
+  position: relative;
+
+  width:
+    min(1080px,94vw);
+
+  margin: 0 auto;
+
+  min-height: 1280px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  column-gap: 145px;
+
+  padding:
+    60px 0 100px;
+}
+
+.timeline-side {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 145px;
+}
+
+.timeline-line {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(107,37,69,.28) 8%,
+      rgba(107,37,69,.28) 92%,
+      transparent
+    );
+}
+
+.timeline-left .timeline-line {
+  right: -73px;
+}
+
+.timeline-right .timeline-line {
+  left: -73px;
+}
+
+.timeline-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.timeline-left .timeline-item {
+  justify-content: flex-end;
+}
+
+.timeline-right .timeline-item {
+  justify-content: flex-start;
+}
+
+.timeline-dot {
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #ff8fb3;
+
+  border: 3px solid #fff8fb;
+
+  box-shadow:
+    0 0 0 3px
+      rgba(255,143,179,.28),
+    0 4px 10px
+      rgba(107,37,69,.2);
+
+  z-index: 5;
+}
+
+.timeline-left .timeline-dot {
+  right: -80px;
+}
+
+.timeline-right .timeline-dot {
+  left: -80px;
+}
+
+.timeline-card {
+  position: relative;
+
+  width: 220px;
+
+  padding:
+    11px 11px 9px;
+
+  background:
+    var(--paper);
+
+  box-shadow:
+    0 10px 24px
+    rgba(72,29,49,.17);
+
+  transform:
+    rotate(-2deg);
+
+  transition:
+    transform .45s
+      cubic-bezier(.22,1,.36,1),
+    box-shadow .45s ease;
+}
+
+.timeline-item:nth-child(even)
+.timeline-card {
+  transform:
+    rotate(2deg);
+}
+
+.timeline-card:hover {
+  transform:
+    rotate(0)
+    translateY(-7px);
+
+  box-shadow:
+    0 17px 32px
+    rgba(72,29,49,.24);
+}
+
+.timeline-card img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio:
+    1 / 1.08;
+
+  object-fit: cover;
+}
+
+.timeline-card span {
+  display: block;
+
+  margin-top: 7px;
+
+  text-align: center;
+
+  color: #7d5267;
+
+  font:
+    1rem
+    'Patrick Hand',
+    cursive;
+}
+
+.photo-tape {
+  position: absolute;
+
+  z-index: 6;
+
+  width: 72px;
+  height: 23px;
+
+  left: 50%;
+  top: -12px;
+
+  transform:
+    translateX(-50%)
+    rotate(-4deg);
+
+  background:
+    rgba(255,209,102,.86);
+}
+
+.timeline-decor {
+  position: absolute;
+
+  pointer-events: none;
+
+  opacity: .65;
+
+  animation:
+    timelineFloat
+    4s ease-in-out infinite;
+}
+
+.decor-a {
+  top: 10%;
+  left: 47%;
+}
+
+.decor-b {
+  top: 37%;
+  left: 52%;
+
+  animation-delay: -1s;
+}
+
+.decor-c {
+  top: 62%;
+  left: 46%;
+
+  animation-delay: -2s;
+}
+
+.decor-d {
+  bottom: 9%;
+  left: 51%;
+
+  animation-delay: -3s;
+}
+
+@keyframes timelineFloat {
+  0%,100% {
+    transform:
+      translateY(0)
+      rotate(-5deg);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(5deg);
+  }
+}
+
+
+/* =========================================================
+   FINAL GIFT
+========================================================= */
+
+.final-section {
+  width: 100%;
+
+  min-height: 620px;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: flex-start;
+
+  padding:
+    90px 20px 140px;
+}
+
+.gift-stage {
+  position: relative;
+
+  width: 340px;
+  height: 430px;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.gift-glow {
+  position: absolute;
+
+  width: 270px;
+  height: 270px;
+
+  left: 50%;
+  top: 52%;
+
+  transform:
+    translate(-50%,-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.95),
+      rgba(255,206,224,.48),
+      transparent 70%
+    );
+
+  filter: blur(5px);
+
+  opacity: .6;
+
+  transition:
+    opacity .6s ease,
+    transform .8s ease;
+}
+
+.gift-stage.opened .gift-glow {
+  opacity: 1;
+
+  transform:
+    translate(-50%,-50%)
+    scale(1.22);
+}
+
+
+/* =========================================================
+   GIFT BOX
+========================================================= */
+
+.gift-box {
+  position: relative;
+
+  width: 220px;
+  height: 180px;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  transition:
+    transform .3s
+    cubic-bezier(.22,1,.36,1);
+}
+
+.gift-box:hover {
+  transform:
+    translateY(-7px)
+    scale(1.025);
+}
+
+.gift-shadow {
+  position: absolute;
+
+  width: 245px;
+  height: 32px;
+
+  bottom: -10px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(60,23,39,.25);
+
+  filter: blur(8px);
+
+  z-index: -1;
+}
+
+.gift-body {
+  position: absolute;
+
+  width: 190px;
+  height: 120px;
+
+  left: 15px;
+  bottom: 0;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffafd0 0%,
+      #ff86ae 45%,
+      #d95783 100%
+    );
+
+  box-shadow:
+    0 17px 27px
+      rgba(78,27,48,.25),
+
+    inset 0 -12px 18px
+      rgba(0,0,0,.12),
+
+    inset 7px 0 12px
+      rgba(255,255,255,.17);
+
+  overflow: hidden;
+}
+
+.gift-body::after {
+  content: "";
+
+  position: absolute;
+
+  width: 60px;
+  height: 170px;
+
+  top: -20px;
+  right: 15px;
+
+  transform: rotate(15deg);
+
+  background:
+    rgba(255,255,255,.08);
+}
+
+.gift-ribbon-v {
+  position: absolute;
+
+  left: 50%;
+
+  top: 0;
+  bottom: 0;
+
+  width: 31px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #f7c84d,
+      #ffe08b,
+      #efbd3f
+    );
+}
+
+.gift-ribbon-h {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 51px;
+
+  height: 29px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f7c84d,
+      #ffe08b,
+      #efbd3f
+    );
+}
+
+
+/* =========================================================
+   LID
+========================================================= */
+
+.gift-lid {
+  position: absolute;
+
+  width: 220px;
+  height: 48px;
+
+  left: 0;
+  top: 18px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffbad6,
+      #ff80ab 55%,
+      #d95783
+    );
+
+  box-shadow:
+    0 8px 15px
+      rgba(74,26,46,.23),
+
+    inset 0 5px 8px
+      rgba(255,255,255,.18);
+
+  z-index: 30;
+
+  transform-origin:
+    left bottom;
+
+  transition:
+    transform .8s
+    cubic-bezier(.22,1,.36,1);
+}
+
+.gift-lid::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 0;
+  bottom: 0;
+
+  width: 31px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #f7c84d,
+      #ffe08b,
+      #efbd3f
+    );
+}
+
+.gift-stage.opened .gift-lid {
+  transform:
+    rotate(-32deg)
+    translate(-20px,-65px);
+}
+
+
+/* =========================================================
+   BOW
+========================================================= */
+
+.big-bow {
+  position: absolute;
+
+  z-index: 50;
+
+  left: 50%;
+
+  top: -17px;
+}
+
+.big-bow-left,
+.big-bow-right {
+  position: absolute;
+
+  width: 57px;
+  height: 43px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd86c,
+      #f2bd3d
+    );
+
+  border-radius:
+    70% 20% 65% 25%;
+
+  box-shadow:
+    0 5px 8px
+      rgba(0,0,0,.2);
+}
+
+.big-bow-left {
+  left: -63px;
+  top: -42px;
+
+  transform:
+    rotate(-27deg);
+}
+
+.big-bow-right {
+  left: 6px;
+  top: -42px;
+
+  transform:
+    rotate(27deg)
+    scaleX(-1);
+}
+
+.big-bow-knot {
+  position: absolute;
+
+  width: 27px;
+  height: 27px;
+
+  left: 50%;
+  top: -30px;
+
+  transform:
+    translateX(-50%)
+    rotate(45deg);
+
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe38b,
+      #ecbc3e
+    );
+
+  box-shadow:
+    0 4px 7px
+      rgba(0,0,0,.22);
+}
+
+.gift-caption {
+  position: absolute;
+
+  bottom: 5px;
+
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width: 300px;
+
+  text-align: center;
+
+  color:
+    var(--pink-soft);
+
+  font-size: .86rem;
+
+  opacity: .75;
+}
+
+
+/* =========================================================
+   POPUP NOTE
+========================================================= */
+
+#birthday-popup {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity .35s ease,
+    visibility .35s ease;
+}
+
+#birthday-popup.show {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+.popup-backdrop {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(40,17,29,.62);
+
+  backdrop-filter: blur(5px);
+
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.popup-note {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(455px, calc(100vw - 42px));
+
+  min-height: 320px;
+
+  background:
+    var(--note);
+
+  color:
+    #4a3b00;
+
+  box-shadow:
+    10px 16px 40px
+      rgba(0,0,0,.32);
+
+  opacity: 0;
+
+  transform:
+    translateY(90px)
+    scale(.65)
+    rotate(-7deg);
+
+  transition:
+    opacity .45s ease,
+
+    transform .72s
+      cubic-bezier(.16,1,.3,1);
+}
+
+#birthday-popup.show .popup-note {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1)
+    rotate(-1.5deg);
+}
+
+.popup-tape {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 50%;
+  top: -16px;
+
+  width: 100px;
+  height: 31px;
+
+  transform:
+    translateX(-50%)
+    rotate(-4deg);
+
+  background:
+    rgba(255,209,102,.9);
+
+  box-shadow:
+    0 3px 7px
+      rgba(0,0,0,.18);
+}
+
+.popup-note-content {
+  padding:
+    48px 30px 30px;
+
+  font:
+    1.22rem/1.55
+    'Patrick Hand',
+    cursive;
+}
+
+.popup-note-title {
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  color:
+    var(--pink-text);
+
+  font:
+    700 .92rem
+    'Quicksand',
+    sans-serif;
+}
+
+.popup-note-content p {
+  margin-bottom: 11px;
+}
+
+.popup-sign {
+  margin-top: 20px;
+
+  text-align: right;
+
+  color:
+    #7d5267;
+
+  font-size: 1rem;
+}
+
+.popup-close {
+  position: absolute;
+
+  z-index: 20;
+
+  top: -14px;
+  right: -14px;
+
+  width: 34px;
+  height: 34px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    var(--pink-text);
+
+  color: white;
+
+  font-size: 21px;
+
+  line-height: 34px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px
+      rgba(0,0,0,.28);
+
+  transition:
+    transform .2s ease;
+}
+
+.popup-close:hover {
+  transform:
+    scale(1.1)
+    rotate(8deg);
+}
+
+
+/* =========================================================
+   BANNER RAIN
+========================================================= */
+
+#banner-rain {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99990;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.falling-banner {
+  position: absolute;
+
+  top: -110px;
+
+  min-width: 105px;
+  height: 34px;
+
+  padding:
+    0 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  color: white;
+
+  font:
+    700 10px
+    'Quicksand',
+    sans-serif;
+
+  letter-spacing: .04em;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 10px
+      rgba(65,20,40,.18);
+
+  transform:
+    translate3d(0,-100px,0)
+    rotate(var(--start-rotation));
+
+  animation:
+    bannerDrop
+    var(--duration)
+    cubic-bezier(.19,.67,.25,1)
+    forwards;
+
+  animation-delay:
+    var(--delay);
+}
+
+.falling-banner::before,
+.falling-banner::after {
+  content: "";
+
+  position: absolute;
+
+  top: 30px;
+
+  width: 47px;
+  height: 47px;
+
+  background: inherit;
+
+  z-index: -1;
+}
+
+.falling-banner::before {
+  left: 0;
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      75% 100%,
+      50% 68%,
+      25% 100%
+    );
+}
+
+.falling-banner::after {
+  right: 0;
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      75% 100%,
+      50% 68%,
+      25% 100%
+    );
+}
+
+@keyframes bannerDrop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(0,-100px,0)
+      rotate(var(--start-rotation))
+      scale(.75);
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  55% {
+    transform:
+      translate3d(
+        var(--sway),
+        50vh,
+        0
+      )
+      rotate(var(--middle-rotation))
+      scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate3d(
+        var(--end-x),
+        calc(100vh + 180px),
+        0
+      )
+      rotate(var(--end-rotation))
+      scale(.9);
+  }
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.falling-confetti {
+  position: absolute;
+
+  top: -30px;
+
+  animation:
+    confettiDrop
+    var(--duration)
+    linear
+    forwards;
+
+  animation-delay:
+    var(--delay);
+
+  font-size:
+    var(--size);
+}
+
+@keyframes confettiDrop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate3d(0,-50px,0)
+      rotate(0);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate3d(
+        var(--drift),
+        calc(100vh + 100px),
+        0
+      )
+      rotate(var(--rotation));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px) {
+
+  .timeline-section {
+    width: 96vw;
+
+    column-gap: 58px;
+
+    min-height: 1100px;
+  }
+
+  .timeline-side {
+    gap: 115px;
+  }
+
+  .timeline-left .timeline-line {
+    right: -29px;
+  }
+
+  .timeline-right .timeline-line {
+    left: -29px;
+  }
+
+  .timeline-left .timeline-dot {
+    right: -36px;
+  }
+
+  .timeline-right .timeline-dot {
+    left: -36px;
+  }
+
+  .timeline-card {
+    width: 150px;
+  }
+
+  .gift-stage {
+    transform: scale(.9);
+  }
+}
+
+@media(max-width:500px) {
+
+  .hero {
+    min-height: 92svh;
+  }
+
+  .record,
+  .record-container {
+    width: 145px;
+    height: 145px;
+  }
+
+  .timeline-section {
+    width: 95vw;
+
+    column-gap: 35px;
+  }
+
+  .timeline-side {
+    gap: 100px;
+  }
+
+  .timeline-left .timeline-line {
+    right: -18px;
+  }
+
+  .timeline-right .timeline-line {
+    left: -18px;
+  }
+
+  .timeline-left .timeline-dot {
+    right: -25px;
+  }
+
+  .timeline-right .timeline-dot {
+    left: -25px;
+  }
+
+  .timeline-card {
+    width: 125px;
+
+    padding:
+      8px 8px 7px;
+  }
+
+  .timeline-card span {
+    font-size: .82rem;
+  }
+
+  .photo-tape {
+    width: 57px;
+    height: 19px;
+    top: -9px;
+  }
+
+  .gift-stage {
+    transform: scale(.77);
+
+    margin-top: -25px;
+    margin-bottom: -20px;
+  }
+
+  .popup-note {
+    width:
+      calc(100vw - 35px);
+
+    min-height:
+      280px;
+  }
+
+  .popup-note-content {
+    padding:
+      43px 22px 25px;
+
+    font-size:
+      1.12rem;
+  }
+
+  .falling-banner {
+    min-width: 82px;
+
+    height: 28px;
+
+    padding: 0 8px;
+
+    font-size: 8px;
+  }
+
+  #unlock-btn {
+    min-width: 170px;
+
+    padding:
+      13px 30px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     LOCK SCREEN
+======================================================= -->
+
+<div id="lock-screen">
+
+  <p class="lock-title">
+    🔒 Nhập Ngày Sinh Zô Để Mở 
+  </p>
+
+  <p class="lock-sub">
+    Dành Riêng Cho MaiPhanhh
+  </p>
+
+  <!-- ẢNH 6 + ẢNH 7 -->
+  <div class="login-photos">
+
+    <img
+      src="images/anh7.jpg"
+      alt="Ảnh 7"
+    >
+      <div style="width: 200px;"></div>
+
+    <img
+      src="images/anh8.jpg"
+      alt="Ảnh 8"
+    >
+
+  </div>
+
+  <div class="date-inputs">
+   
+  
+
+    <input
+      id="day"
+      class="date-part"
+      type="number"
+      placeholder="Ngày"
+      min="1"
+      max="31"
+    >
+
+    <input
+      id="month"
+      class="date-part"
+      type="number"
+      placeholder="Tháng"
+      min="1"
+      max="12"
+    >
+
+    <input
+      id="year"
+      class="date-part year"
+      type="number"
+      placeholder="Năm"
+      min="1900"
+      max="2100"
+    >
+
+  </div>
+
+  <button id="unlock-btn">
+    Mở khóa 🎁
+  </button>
+
+  <p
+    id="error"
+    class="error-msg">
+  </p>
+
+</div>
+  <div class="date-inputs">
+
+    <input
+      id="day"
+      class="date-part"
+      type="number"
+      placeholder="Ngày"
+      min="1"
+      max="31"
+    >
+
+    <input
+      id="month"
+      class="date-part"
+      type="number"
+      placeholder="Tháng"
+      min="1"
+      max="12"
+    >
+
+    <input
+      id="year"
+      class="date-part year"
+      type="number"
+      placeholder="Năm"
+      min="1900"
+      max="2100"
+    >
+
+  </div>
+
+  <button id="unlock-btn">
+    Mở khóa 🎁
+  </button>
+
+  <p
+    id="error"
+    class="error-msg">
+  </p>
+
+</div>
+
+
+<!-- =======================================================
+     MAIN
+======================================================= -->
+
+<main
+  id="content"
+  class="hidden-content">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+  <div class="hero-decor hero-d1">
+    💕
+  </div>
+
+  <div class="hero-decor hero-d2">
+    ✨
+  </div>
+
+  <div class="hero-decor hero-d3">
+    🌸
+  </div>
+
+  <div class="hero-decor hero-d4">
+    🎀
+  </div>
+
+
+  <div class="hero-title">
+
+    <span class="small">
+      Today is for
+    </span>
+
+    <span class="big">
+      MaiPhanhh
+    </span>
+
+  </div>
+
+
+  <!-- MUSIC -->
+
+  <div class="music-player">
+
+    <div
+      id="record-container"
+      class="record-container">
+
+      <div
+        id="record"
+        class="record">
+
+        <img
+          class="cover"
+          src="images/cover.jpg"
+          alt="Cover"
+        >
+
+      </div>
+
+    </div>
+
+
+    <div class="song-info">
+
+      <div
+        id="song-name"
+        class="song-name">
+        Happy Birthday To 
+      </div>
+
+      <div
+        id="artist-name"
+        class="artist-name">
+       Phan Đình Tùng
+      </div>
+
+    </div>
+
+
+    <div class="progress-container">
+
+      <input
+        id="progress"
+        class="progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+      >
+
+      <div class="time-row">
+
+        <span id="current-time">
+          0:00
+        </span>
+
+        <span id="duration">
+          0:00
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="music-controls">
+
+      <button
+        id="play-btn"
+        class="music-btn">
+        ▶
+      </button>
+
+      <div class="volume">
+
+        <input
+          id="volume"
+          type="range"
+          min="0"
+          max="1"
+          step=".01"
+          value=".8"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section class="timeline-section">
+
+  <div class="timeline-decor decor-a">
+    ✦
+  </div>
+
+  <div class="timeline-decor decor-b">
+    💕
+  </div>
+
+  <div class="timeline-decor decor-c">
+    🌸
+  </div>
+
+  <div class="timeline-decor decor-d">
+    ✨
+  </div>
+
+
+  <!-- LEFT -->
+
+  <div
+    class="timeline-side timeline-left">
+
+    <div class="timeline-line"></div>
+
+
+    <div class="timeline-item scroll-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-card">
+
+        <div class="photo-tape"></div>
+
+        <img
+          src="images/anh1.jpg"
+          alt="Ảnh 1"
+        >
+
+        <span>
+          📅 10/09/2014
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item scroll-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-card">
+
+        <div class="photo-tape"></div>
+
+        <img
+          src="images/anh3.jpg"
+          alt="Ảnh 3"
+        >
+
+        <span>
+          📅 2014
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item scroll-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-card">
+
+        <div class="photo-tape"></div>
+
+        <img
+          src="images/anh5.jpg"
+          alt="Ảnh 5"
+        >
+
+        <span>
+          📅 10/5/2017
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT -->
+
+  <div
+    class="timeline-side timeline-right">
+
+    <div class="timeline-line"></div>
+
+
+    <div class="timeline-item scroll-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-card">
+
+        <div class="photo-tape"></div>
+
+        <img
+          src="images/anh2.jpg"
+          alt="Ảnh 2"
+        >
+
+        <span>
+          📅 2/2/2014   
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item scroll-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-card">
+
+        <div class="photo-tape"></div>
+
+        <img
+          src="images/anh4.jpg"
+          alt="Ảnh 4"
+        >
+
+        <span>
+          📅 18/7/2017
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item scroll-item">
+
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-card">
+
+        <div class="photo-tape"></div>
+
+        <img
+          src="images/anh6.jpg"
+          alt="Ảnh 6"
+        >
+
+        <span>
+          📅 18/7/2017
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL GIFT
+===================================================== -->
+
+<section class="final-section">
+
+  <div
+    id="gift-stage"
+    class="gift-stage">
+
+
+    <div class="gift-glow"></div>
+
+
+    <div
+      id="gift-button"
+      class="gift-box"
+      role="button"
+      tabindex="0"
+      aria-label="Mở hộp quà">
+
+      <div class="gift-shadow"></div>
+
+
+      <div class="gift-body">
+
+        <span class="gift-ribbon-v"></span>
+
+        <span class="gift-ribbon-h"></span>
+
+      </div>
+
+
+      <div
+        id="gift-lid"
+        class="gift-lid">
+
+        <div class="big-bow">
+
+          <span class="big-bow-left"></span>
+
+          <span class="big-bow-right"></span>
+
+          <span class="big-bow-knot"></span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <p class="gift-caption">
+      🎁 bấm vào hộp quà để mở bất ngờ
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     POPUP NOTE
+===================================================== -->
+
+<div
+  id="birthday-popup"
+  class="birthday-popup">
+
+  <div
+    id="popup-backdrop"
+    class="popup-backdrop">
+  </div>
+
+
+  <div class="popup-note">
+
+    <button
+      id="popup-close"
+      class="popup-close"
+      aria-label="Đóng">
+      ×
+    </button>
+
+
+    <div class="popup-tape"></div>
+
+
+    <div class="popup-note-content">
+
+      <div class="popup-note-title">
+        💌 For MaiPhanhh
+      </div>
+
+
+      <p>
+        Hôm nây là 18/08/2026
+        là ngày gì ạ? 🎂
+      </p>
+
+
+      <p>
+        Chính xác là ngày sinh nhật
+        của chị iuu e òiii :))
+      </p>
+
+
+      <p>
+        Năm lay bà già tròn 20 tết,
+        chúc bà già luôn xinh gái,
+        khỏe mạnh nhóoo.
+      </p>
+
+
+      <p>
+        Lúc nào giàu sang phú quý
+        nhớ đến th e này
+        là đựtt hehe 💕
+      </p>
+
+
+      <div class="popup-sign">
+        — từ th e này 🎀
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     BANNER RAIN
+===================================================== -->
+
+<div
+  id="banner-rain"
+  aria-hidden="true">
+</div>
+
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
+
+<audio
+  id="audio"
+  preload="metadata">
+
+  <source
+    src="music/birthday.mp3"
+    type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+/* =========================================================
+   DATE
+========================================================= */
+
+const correctDay = 18;
+const correctMonth = 8;
+const correctYear = 2006;
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const lockScreen =
+  document.getElementById(
+    'lock-screen'
+  );
+
+const content =
+  document.getElementById(
+    'content'
+  );
+
+const error =
+  document.getElementById(
+    'error'
+  );
+
+const unlockBtn =
+  document.getElementById(
+    'unlock-btn'
+  );
+
+
+/* =========================================================
+   UNLOCK
+========================================================= */
+
+unlockBtn.addEventListener(
+  'click',
+  () => {
+
+    const day =
+      Number(
+        document.getElementById('day').value
+      );
+
+    const month =
+      Number(
+        document.getElementById('month').value
+      );
+
+    const year =
+      Number(
+        document.getElementById('year').value
+      );
+
+
+    if (
+      day !== correctDay ||
+      month !== correctMonth ||
+      year !== correctYear
+    ) {
+
+      error.textContent =
+        'Chưa đúng rồi, thử lại nhé 😉';
+
+      lockScreen.classList.remove(
+        'shake'
+      );
+
+      /*
+         restart animation
+      */
+
+      void lockScreen.offsetWidth;
+
+      lockScreen.classList.add(
+        'shake'
+      );
+
+      return;
+    }
+
+
+    /*
+       Không cho spam click
+    */
+
+    unlockBtn.disabled =
+      true;
+
+
+    /*
+       Fade màn hình khóa
+    */
+
+    lockScreen.classList.add(
+      'unlocked'
+    );
+
+
+    /*
+       Hiện content hơi trễ
+       để transition mượt
+    */
+
+    setTimeout(
+      () => {
+
+        content.classList.remove(
+          'hidden-content'
+        );
+
+        window.scrollTo(
+          0,
+          0
+        );
+
+        showScrollItems();
+
+      },
+      180
+    );
+
+  }
+);
+
+
+/* =========================================================
+   ENTER ĐỂ MỞ KHÓA
+========================================================= */
+
+[
+  'day',
+  'month',
+  'year'
+].forEach(
+  id => {
+
+    document
+      .getElementById(id)
+      .addEventListener(
+        'keydown',
+        event => {
+
+          if (
+            event.key === 'Enter'
+          ) {
+
+            unlockBtn.click();
+
+          }
+
+        }
+      );
+
+  }
+);
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const audio =
+  document.getElementById(
+    'audio'
+  );
+
+const record =
+  document.getElementById(
+    'record'
+  );
+
+const recordContainer =
+  document.getElementById(
+    'record-container'
+  );
+
+const playButton =
+  document.getElementById(
+    'play-btn'
+  );
+
+const progress =
+  document.getElementById(
+    'progress'
+  );
+
+const volume =
+  document.getElementById(
+    'volume'
+  );
+
+const currentTime =
+  document.getElementById(
+    'current-time'
+  );
+
+const duration =
+  document.getElementById(
+    'duration'
+  );
+
+
+/*
+   ĐỔI THÔNG TIN BÀI NHẠC Ở ĐÂY
+*/
+
+document.getElementById(
+  'song-name'
+).textContent =
+  'Đôi Mươi';
+
+document.getElementById(
+  'artist-name'
+).textContent =
+  'Hoàng Dũng';
+
+
+audio.volume =
+  Number(
+    volume.value
+  );
+
+
+function toggleMusic() {
+
+  if (
+    audio.paused
+  ) {
+
+    audio
+      .play()
+      .catch(
+        () => {}
+      );
+
+  } else {
+
+    audio.pause();
+
+  }
+
+}
+
+
+playButton.addEventListener(
+  'click',
+  toggleMusic
+);
+
+recordContainer.addEventListener(
+  'click',
+  toggleMusic
+);
+
+
+audio.addEventListener(
+  'play',
+  () => {
+
+    record.classList.add(
+      'playing'
+    );
+
+    playButton.textContent =
+      '❚❚';
+
+  }
+);
+
+
+audio.addEventListener(
+  'pause',
+  () => {
+
+    record.classList.remove(
+      'playing'
+    );
+
+    playButton.textContent =
+      '▶';
+
+  }
+);
+
+
+volume.addEventListener(
+  'input',
+  () => {
+
+    audio.volume =
+      Number(
+        volume.value
+      );
+
+  }
+);
+
+
+function formatTime(
+  seconds
+) {
+
+  if (
+    !Number.isFinite(seconds)
+  ) {
+
+    return '0:00';
+
+  }
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+  const sec =
+    Math.floor(
+      seconds % 60
+    );
+
+
+  return (
+    minutes +
+    ':' +
+    String(sec).padStart(
+      2,
+      '0'
+    )
+  );
+
+}
+
+
+audio.addEventListener(
+  'loadedmetadata',
+  () => {
+
+    duration.textContent =
+      formatTime(
+        audio.duration
+      );
+
+  }
+);
+
+
+audio.addEventListener(
+  'timeupdate',
+  () => {
+
+    if (
+      !audio.duration
+    ) {
+
+      return;
+
+    }
+
+
+    progress.value =
+      (
+        audio.currentTime /
+        audio.duration
+      ) * 100;
+
+
+    currentTime.textContent =
+      formatTime(
+        audio.currentTime
+      );
+
+  }
+);
+
+
+progress.addEventListener(
+  'input',
+  () => {
+
+    if (
+      !audio.duration
+    ) {
+
+      return;
+
+    }
+
+
+    audio.currentTime =
+      (
+        Number(
+          progress.value
+        ) / 100
+      ) *
+      audio.duration;
+
+  }
+);
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+const scrollItems =
+  document.querySelectorAll(
+    '.scroll-item'
+  );
+
+let lastScrollY =
+  window.scrollY;
+
+let direction =
+  'down';
+
+
+window.addEventListener(
+  'scroll',
+  () => {
+
+    const y =
+      window.scrollY;
+
+
+    if (
+      y >
+      lastScrollY + 2
+    ) {
+
+      direction =
+        'down';
+
+    }
+
+    else if (
+      y <
+      lastScrollY - 2
+    ) {
+
+      direction =
+        'up';
+
+    }
+
+
+    lastScrollY =
+      y;
+
+
+    scrollItems.forEach(
+      item => {
+
+        const rect =
+          item.getBoundingClientRect();
+
+
+        const visible =
+          rect.top <
+          window.innerHeight * .9
+          &&
+          rect.bottom >
+          -70;
+
+
+        if (
+          visible
+        ) {
+
+          item.style.opacity =
+            '1';
+
+          item.style.transform =
+            'translateY(0) scale(1)';
+
+        }
+
+        else {
+
+          item.style.opacity =
+            '0';
+
+
+          if (
+            rect.top >=
+            window.innerHeight
+          ) {
+
+            item.style.transform =
+              direction === 'down'
+
+                ? 'translateY(35px) scale(.97)'
+
+                : 'translateY(-20px) scale(.98)';
+
+          }
+
+          else {
+
+            item.style.transform =
+              direction === 'up'
+
+                ? 'translateY(-30px) scale(.97)'
+
+                : 'translateY(20px) scale(.98)';
+
+          }
+
+        }
+
+      }
+    );
+
+  },
+  {
+    passive: true
+  }
+);
+
+
+function showScrollItems() {
+
+  scrollItems.forEach(
+    item => {
+
+      const rect =
+        item.getBoundingClientRect();
+
+
+      if (
+        rect.top <
+        window.innerHeight
+      ) {
+
+        item.style.opacity =
+          '1';
+
+        item.style.transform =
+          'translateY(0) scale(1)';
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   GIFT + POPUP
+========================================================= */
+
+const giftStage =
+  document.getElementById(
+    'gift-stage'
+  );
+
+const giftButton =
+  document.getElementById(
+    'gift-button'
+  );
+
+const birthdayPopup =
+  document.getElementById(
+    'birthday-popup'
+  );
+
+const popupClose =
+  document.getElementById(
+    'popup-close'
+  );
+
+const popupBackdrop =
+  document.getElementById(
+    'popup-backdrop'
+  );
+
+const bannerRain =
+  document.getElementById(
+    'banner-rain'
+  );
+
+
+let giftOpened =
+  false;
+
+
+/* =========================================================
+   OPEN GIFT
+========================================================= */
+
+giftButton.addEventListener(
+  'click',
+  openGift
+);
+
+
+/* keyboard */
+
+giftButton.addEventListener(
+  'keydown',
+  event => {
+
+    if (
+      event.key === 'Enter' ||
+      event.key === ' '
+    ) {
+
+      event.preventDefault();
+
+      openGift();
+
+    }
+
+  }
+);
+
+
+function openGift() {
+
+  if (
+    giftOpened
+  ) {
+
+    return;
+
+  }
+
+
+  giftOpened =
+    true;
+
+
+  /*
+     MỞ NẮP
+  */
+
+  giftStage.classList.add(
+    'opened'
+  );
+
+
+  /*
+     BANNER RƠI
+  */
+
+  setTimeout(
+    () => {
+
+      launchBannerRain();
+
+    },
+    220
+  );
+
+
+  /*
+     POPUP NOTE
+  */
+
+  setTimeout(
+    () => {
+
+      birthdayPopup.classList.add(
+        'show'
+      );
+
+    },
+    620
+  );
+
+}
+
+
+/* =========================================================
+   CLOSE POPUP + ĐÓNG HỘP
+========================================================= */
+
+function closePopup() {
+
+  /*
+     popup biến mất trước
+  */
+
+  birthdayPopup.classList.remove(
+    'show'
+  );
+
+
+  /*
+     sau đó hộp đóng
+  */
+
+  setTimeout(
+    () => {
+
+      giftStage.classList.remove(
+        'opened'
+      );
+
+
+      /*
+         Cho phép mở lại
+      */
+
+      giftOpened =
+        false;
+
+
+      /*
+         Dọn banner / confetti
+      */
+
+      bannerRain.innerHTML =
+        '';
+
+    },
+    320
+  );
+
+}
+
+
+popupClose.addEventListener(
+  'click',
+  closePopup
+);
+
+popupBackdrop.addEventListener(
+  'click',
+  closePopup
+);
+
+
+/* =========================================================
+   BANNER RAIN
+========================================================= */
+
+const bannerTexts = [
+
+  'HAPPY BIRTHDAY',
+  'MAIPHANHH',
+  '20 YEARS',
+  'HAPPY DAY',
+  '18.08.2026',
+  'CHÚC MỪNG SINH NHẬT',
+  'FOR YOU 💕',
+  'YAYYYY',
+  'HAPPY 20TH',
+  '✨ MAIPHANHH ✨'
+
+];
+
+
+const bannerColors = [
+
+  '#e8719b',
+  '#ee92b4',
+  '#d95f8a',
+  '#f0b947',
+  '#e783a5',
+  '#d46a94',
+  '#efa7bf'
+
+];
+
+
+function launchBannerRain() {
+
+  bannerRain.innerHTML =
+    '';
+
+
+  /*
+     35 BANNER
+  */
+
+  for (
+    let i = 0;
+    i < 35;
+    i++
+  ) {
+
+    const banner =
+      document.createElement(
+        'div'
+      );
+
+
+    banner.className =
+      'falling-banner';
+
+
+    banner.textContent =
+      bannerTexts[
+        Math.floor(
+          Math.random() *
+          bannerTexts.length
+        )
+      ];
+
+
+    banner.style.background =
+      bannerColors[
+        Math.floor(
+          Math.random() *
+          bannerColors.length
+        )
+      ];
+
+
+    banner.style.left =
+      (
+        Math.random() *
+        100
+      ) +
+      'vw';
+
+
+    banner.style.minWidth =
+      (
+        85 +
+        Math.random() * 65
+      ) +
+      'px';
+
+
+    banner.style.setProperty(
+      '--duration',
+      (
+        3.4 +
+        Math.random() * 2.5
+      ) +
+      's'
+    );
+
+
+    banner.style.setProperty(
+      '--delay',
+      (
+        Math.random() * 1.7
+      ) +
+      's'
+    );
+
+
+    banner.style.setProperty(
+      '--sway',
+      (
+        -160 +
+        Math.random() * 320
+      ) +
+      'px'
+    );
+
+
+    banner.style.setProperty(
+      '--end-x',
+      (
+        -220 +
+        Math.random() * 440
+      ) +
+      'px'
+    );
+
+
+    banner.style.setProperty(
+      '--start-rotation',
+      (
+        -20 +
+        Math.random() * 40
+      ) +
+      'deg'
+    );
+
+
+    banner.style.setProperty(
+      '--middle-rotation',
+      (
+        -18 +
+        Math.random() * 36
+      ) +
+      'deg'
+    );
+
+
+    banner.style.setProperty(
+      '--end-rotation',
+      (
+        -120 +
+        Math.random() * 240
+      ) +
+      'deg'
+    );
+
+
+    bannerRain.appendChild(
+      banner
+    );
+
+
+    setTimeout(
+      () => {
+        banner.remove();
+      },
+      7800
+    );
+
+  }
+
+
+  /*
+     100 CONFETTI
+  */
+
+  for (
+    let i = 0;
+    i < 100;
+    i++
+  ) {
+
+    createConfetti();
+
+  }
+
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createConfetti() {
+
+  const confetti =
+    document.createElement(
+      'span'
+    );
+
+
+  confetti.className =
+    'falling-confetti';
+
+
+  const shapes = [
+
+    '♥',
+    '♡',
+    '✦',
+    '✧',
+    '✿',
+    '❀',
+    '•',
+    '✨',
+    '💕',
+    '🌸',
+    '🎀'
+
+  ];
+
+
+  confetti.textContent =
+    shapes[
+      Math.floor(
+        Math.random() *
+        shapes.length
+      )
+    ];
+
+
+  confetti.style.left =
+    (
+      Math.random() *
+      100
+    ) +
+    'vw';
+
+
+  confetti.style.color =
+    bannerColors[
+      Math.floor(
+        Math.random() *
+        bannerColors.length
+      )
+    ];
+
+
+  confetti.style.setProperty(
+    '--size',
+    (
+      10 +
+      Math.random() * 18
+    ) +
+    'px'
+  );
+
+
+  confetti.style.setProperty(
+    '--duration',
+    (
+      3 +
+      Math.random() * 3
+    ) +
+    's'
+  );
+
+
+  confetti.style.setProperty(
+    '--delay',
+    (
+      Math.random() * 1.8
+    ) +
+    's'
+  );
+
+
+  confetti.style.setProperty(
+    '--drift',
+    (
+      -200 +
+      Math.random() * 400
+    ) +
+    'px'
+  );
+
+
+  confetti.style.setProperty(
+    '--rotation',
+    (
+      -700 +
+      Math.random() * 1400
+    ) +
+    'deg'
+  );
+
+
+  bannerRain.appendChild(
+    confetti
+  );
+
+
+  setTimeout(
+    () => {
+      confetti.remove();
+    },
+    7800
+  );
+
+}
+
+</script>
+
+</body>
+</html>
